@@ -34,6 +34,9 @@ running  = True
 while running: 
     BIRD_X, BIRD_Y = world_w/4, world_h/2 
 
+    for event in pygame.event.get(): #Gets all the event
+        if event.type == pygame.QUIT:  
+           running = False
     pygame.draw.circle(screen, BIRD, (BIRD_X, BIRD_Y), BIRD_CIRC) #BIRD
     screen.blit(text,text_box)
 
