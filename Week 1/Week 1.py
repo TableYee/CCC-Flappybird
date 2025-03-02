@@ -2,6 +2,10 @@
 import pygame
 import random
 
+"""
+Initialises all the modules 
+-> you have to initialise individual modules if you dont do this
+"""
 pygame.init()
 
 #setting screen size
@@ -27,14 +31,19 @@ BIRD = (255,0,0)       # Red
 
 screen.fill(BACKGROUND)
 text = font.render(f"Score: 1", True, (255, 255, 100))
+#gets text as a rectangluar box
 text_box = text.get_rect()
+#text's center coord = (1100,50)
 text_box.center = (1100, 50)
 
 running  = True
 while running: 
     BIRD_X, BIRD_Y = world_w/4, world_h/2 
+    
+    #DRAWING BIRD Explain the position of the birdy
+    pygame.draw.circle(screen, BIRD, (BIRD_X, BIRD_Y), BIRD_CIRC) 
 
-    pygame.draw.circle(screen, BIRD, (BIRD_X, BIRD_Y), BIRD_CIRC) #BIRD
+    #computer graphics operation = draws the stuff at the position text_box
     screen.blit(text,text_box)
 
     pygame.display.update()
